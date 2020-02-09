@@ -1,0 +1,9 @@
+[Unit]
+Description=Apache ZooKeeper
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/opt/zookeeper/bin/zkServer.sh start-foreground
+User=zookeeper
+

@@ -1,6 +1,7 @@
 base:
   '*':
-    - users
-    - pki
     - pacman
-    - docker
+    - java
+    - zookeeper
+    - hadoop
+    - accumulo
