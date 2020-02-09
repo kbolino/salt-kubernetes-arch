@@ -1,2 +1,3 @@
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export HADOOP_PREFIX=/opt/hadoop
+export ACCUMULO_HOME=/opt/accumulo

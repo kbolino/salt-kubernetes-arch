@@ -1,3 +1,6 @@
+include:
+  - systemd
+
 zookeeper:
   pkg.installed:
     - version: '3.4.5-1'
@@ -31,8 +34,4 @@ zookeeper:
     - require:
       - file: /opt/zookeeper
     - onchanges_in:
-      - module: systemd-reload
-
-systemd-reload:
-  module.run:
-    - name: service.systemctl_reload
+      - daemon-reload

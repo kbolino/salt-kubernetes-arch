@@ -1,3 +1,6 @@
+include:
+  - systemd
+
 hadoop:
   pkg.installed:
     - version: '2.4.0-1'
@@ -53,23 +56,13 @@ hadoop:
     - require:
       - pkg: hadoop
 
-/opt/hadoop/etc/hadoop/hadoop-env.sh:
+{% for file_name in ['core-site.xml', 'hadoop-env.sh', 'hdfs-site.xml', 'slaves'] %}
+/opt/hadoop/etc/hadoop/{{ file_name }}:
   file.managed:
-    - source: salt://hadoop/hadoop-env.sh
+    - source: salt://hadoop/{{ file_name }}
     - require:
       - file: /opt/hadoop
-
-/opt/hadoop/etc/hadoop/hdfs-site.xml:
-  file.managed:
-    - source: salt://hadoop/hdfs-site.xml
-    - require:
-      - file: /opt/hadoop
-
-/opt/hadoop/etc/hadoop/slaves:
-  file.managed:
-    - source: salt://hadoop/slaves
-    - require:
-      - file: /opt/hadoop
+{% endfor %}
 
 /var/log/hadoop:
   file.directory:
@@ -84,7 +77,4 @@ hadoop:
     - require:
       - user: hadoop
     - onchanges_in:
-      - cmd: systemd-tmpfiles --create
-
-systemd-tmpfiles --create:
-  cmd.run: []
+      - tmpfiles-create

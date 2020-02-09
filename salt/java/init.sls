@@ -1,3 +1,3 @@
-jre11-openjdk-headless:
+jdk8-openjdk:
   pkg.installed: 
-    - version: '11.0.6.u10-1'
+    - version: '8.u242-1'

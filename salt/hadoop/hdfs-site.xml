@@ -46,10 +46,6 @@
     <value>nuc01.gb.kbolino.com:2181,nuc02.gb.kbolino.com:2181,nuc03.gb.kbolino.com:2181</value>
   </property>
   <property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://dfs-ha</value>
-  </property>
-  <property>
     <name>hadoop.tmp.dir</name>
     <value>/data/hadoop</value>
   </property>
