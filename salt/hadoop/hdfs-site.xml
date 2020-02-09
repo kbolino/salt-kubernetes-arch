@@ -27,7 +27,7 @@
   </property>
   <property>
     <name>dfs.namenode.shared.edits.dir</name>
-    <value>qjournal://nuc01.gb.kbolino.com:8485;nuc02.gb.kbolino.com:8485;nuc03.gb.kbolino.com:8485/mycluster</value>
+    <value>qjournal://nuc01.gb.kbolino.com:8485;nuc02.gb.kbolino.com:8485;nuc03.gb.kbolino.com:8485/dfs-ha</value>
   </property>
   <property>
     <name>dfs.client.failover.proxy.provider.dfs-ha</name>
@@ -55,6 +55,6 @@
   </property>
   <property>
     <name>dfs.journalnode.edits.dir</name>
-    <value>/data/hadoop/edits</value>
+    <value>/data/hadoop/dfs/edits</value>
   </property>
 </configuration>

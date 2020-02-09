@@ -78,14 +78,13 @@ hadoop:
     - require:
       - user: hadoop
 
-/data/hadoop/dfs:
-  file.directory:
-    - user: hadoop
-    - group: hadoop
-
-/data/hadoop/dfs/name:
-  file.directory:
-    - user: hadoop
-    - group: hadoop
+/etc/tmpfiles.d/hadoop-pid-dir.conf:
+  file.managed:
+    - source: salt://hadoop/hadoop-pid-dir.conf
     - require:
-      - file: /data/hadoop/dfs
+      - user: hadoop
+    - onchanges_in:
+      - cmd: systemd-tmpfiles --create
+
+systemd-tmpfiles --create:
+  cmd.run: []
