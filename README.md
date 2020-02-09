@@ -6,3 +6,8 @@ on Arch Linux.
 This is currently in a rough state, and would require some adaptation to be
 used, for example changing the user account(s) and the PKI certificate(s)
 to match what is needed in a particular environment.
+
+## Hadoop
+
+The hadoop branch currently repurposes this salt configuration set up
+HDFS and Accumulo, and maybe MapReduce.
